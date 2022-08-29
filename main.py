@@ -4,10 +4,10 @@ import response as R
 print("Bot started...")
 
 def start_command(update, context):
-    update.message.reply_text('Type something random to get started!')
+    update.message.reply_text('Ciao! Hai bisogno di contattare un rappresentante?')
     
 def help_command(update, context):
-    update.message.reply_text('If you need help! you can say: hello, hi,good morning,hey, hi you,Salut, coucou,iam fine,nice,fine,good,and you? how are you?, what about you?,my name?,what is the name of my partner?,whats your name?,do you have a name?,time?,time,what time is it?,good bye')
+    update.message.reply_text('Hai bisogno di aiuto?')
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
@@ -23,8 +23,8 @@ def main():
     updater = Updater(keys.API_KEY, use_context= True)
     dp = updater.dispatcher
     
-    dp.add_handler(CommandHandler("start", start_command))
-    dp.add_handler(CommandHandler("help", help_command))
+    dp.add_handler(CommandHandler("Start", start_command))
+    dp.add_handler(CommandHandler("Aiuto", help_command))
     
     dp.add_handler(MessageHandler(Filters.text, handle_message)) 
     dp.add_error_handler(error)
