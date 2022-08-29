@@ -1,9 +1,9 @@
-from datetime import datetime
+
 def sample_response(input_text):
     user_message =str(input_text).lower()
 
-    if user_message in ("hello", "hi","good morning","hey", "hi you",):
-        return "hey! how are you?"
+    if user_message in ("Salve", "Buongiorno","Ciao"):
+        return "Ciao, come posso esserti utile?"
     if user_message in ("Salut", "coucou",):
         return "Salut! vous allez bien?"  
     if user_message in ("iam fine","nice", "fine", "good",):
